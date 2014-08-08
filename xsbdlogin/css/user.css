@@ -1,0 +1,138 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* LOGIN & REGISTER*/
+.titlebar{
+	width:100%;
+	height:44px;
+	background-color:#3999CC;
+	overflow:hidden;
+}
+
+.titlebar-wrap{
+	width:115px;
+	margin:auto;
+	background-color:#CCC;
+	height:18px;
+	margin-top:14px;
+	background: url(../img/user-icon.png) no-repeat; 
+}
+
+.titlebar-wrap.register{
+	background-position:left bottom;
+}
+
+.titlebar-wrap span{
+	padding:0;
+	list-style:none;
+	padding-left:40px;
+	color:#FFF;
+	font-size:18px;
+	margin:0;
+	display:inline-block;
+	line-height:18px;
+}
+
+.form-wrap{
+	width: auto;
+	display:block;
+}
+
+.form-margin{
+	margin:20px 25px 0 25px;
+	padding-top:10px;
+}
+
+.form-wrap input{
+	display:inline-block;
+	float:left;
+}
+
+.input-icon{
+	background:url(../img/form-icon.png) no-repeat;
+	display:inline-block;
+	width:41px;
+	height:35px;
+	float:left;
+}
+
+.input-icon.email{
+	background-position:left  center;
+}
+
+.input-icon.passwd{
+	background-position:left  bottom;
+}
+
+.input-icon.nickname{
+	background-position:left  top;
+}
+
+span.forget{
+	text-decoration:underline;
+	padding-left:12px;
+}
+
+/*  Use other accout to log in */
+span.otheracc{
+	text-align:center;
+	display:inline-block;
+	margin:auto;
+	width:100%;
+}
+
+span.otheracc a{
+	color:#595757;
+	text-align:center;
+	display:inline-block;
+	margin:auto;
+}
+
+.btngroup-wrap{
+	width:170px;
+	margin:auto;
+}
+
+.btngroup-wrap a{
+	display:inline-block;
+}
+
+
+.btn-round{
+	width:33px;
+	height:34px;
+	background: url(../img/log.png);
+}
+
+.btn-round.tencent{
+	background-position:center;
+}
+
+.btn-round.douban{
+	background-position:right;
+}
+
+
+/*  WARN   */
+input.warn{
+	border:1px solid #C30D23;
+}
+
+a.btn-warn{
+	display:block;
+	background:#FFCCCC;
+	padding:7px 0;
+	color:#C30D23;
+}
+
+a.btn-warn span{
+	color:#3999CC;
+	padding-left:15px;
+}
+
+a.ok{
+	background:#CCFFCC;
+	color:#0DC323;
+}
+
+

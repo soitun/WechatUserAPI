@@ -1,10 +1,7 @@
 <?php
-/*
-多客服转发
-*/
 function userIsEnroll($userName)   
 	{
-		$con = mysql_connect("localhost","root","");
+		$con = mysql_connect("localhost","weixin","password");
 		mysql_set_charset("UTF8", $con);
 		if (!$con)
 		{
@@ -38,7 +35,7 @@ function userIsEnroll($userName)
 	{
 $bind[] = array(
 				'title' => '点击绑定',
-				'url' =>'http://???/bind.php?uid=' .$u,
+				'url' =>'http://web/weixin/xsbd/bind.php?uid=' .$u,
 				'description' => '本功能只提供给2014级新生与学长学姐沟通使用，如果您是2014级新生请点击这里绑定'
 			);
 $response = $this->respNews($bind);

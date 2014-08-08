@@ -8,7 +8,7 @@ if(!$ret) {
 else{
 $fail = $message['content'];
 $from = $message['from'];
-$con = mysql_connect("localhost","root","");
+$con = mysql_connect("localhost","weixin","password");
 		mysql_set_charset("UTF8", $con);
 		if (!$con)
 		{
