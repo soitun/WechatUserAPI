@@ -3,7 +3,7 @@
 {
  $tmp=preg_match('/select|insert|update|delete|\'|\/\*|\*|\.\.\/|\.\/|union|into|load_file|outfile/i', $str); 
  if($tmp){
-  echo "输入非注入内容";
+  echo "同学你很有想法，跟我学做菜吧。请发送email到tms@live.cn，或许我们可以聊聊。by 无聊的程序员";
   exit();
  }else{
   return $str;

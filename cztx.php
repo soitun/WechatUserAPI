@@ -33,24 +33,23 @@ function realname($userName)
 		mysql_select_db("weixin", $con);
 		$result = mysql_query("SELECT * FROM student where wxId = '".$userName."';");
 		$row = mysql_fetch_array($result);
-		$result2 = mysql_query("SELECT * FROM jfxx where xh = '".$row['xh']."';");
+		$result2 = mysql_query("SELECT bj FROM stuinfo where sfzh = '".$row['idnumber']."';");
 		$row2 = mysql_fetch_array($result2);
-		$result3 = mysql_query("SELECT * FROM card where xh = '".$row['xh']."';");
-		$row3 = mysql_fetch_array($result3);
+		$result3 = mysql_query("select * from stuinfo left join student on stuinfo.xh= student.xh where bj = '".$row2['bj']."';");
+		 
 		if (!$row) $content = '没有相关信息！';
 		else 
+		{$content1="同班同学\n姓名/性别/QQ或微信";
+		while($row3 = mysql_fetch_array($result3))
 		{
-			$content = "缴费信息\n姓名：".$row2['xm'].
-			"\n学费：".$row2['xf'].
-			"\n代收费：".$row2['dsf'].
-			"\n住宿费：".$row2['zsf']."(此为待定，以最终宿舍安排为准)".
-			"\n卧具费：495元/套（需在迎新系统选择是否购买）\n扣费信息：暂未扣费 "
-			;
+			$content= $row3['xm']."/".$row3['xb']."/".$row3['wxqq'];
+			$content1=$content1."\n".$content;
 			}
-		if($row3['yhkh']==''){$content=$content."\n无银行卡信息，需来校报到时在中国银行湖南大学支行自行办理。";}else{$content=$content."\n银行卡号：\n".$row3['yhkh'];}
+			
 		
+		}
 		mysql_close($con);
-		return $content;
+		return $content1;
 	}
 $message = $this->message;
 $isenroll=userIsEnroll($message['from']);

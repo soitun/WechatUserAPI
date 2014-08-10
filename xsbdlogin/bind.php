@@ -30,7 +30,7 @@
            	  <span class="input-icon passwd"></span>
               <input name="idnumber" type="TEXT"  placeholder="新生请输入身份证号码"/>
         </div>
-		填写微信账号或者QQ号可以方便找到舍友：
+		填写微信账号或者QQ号可以方便找到同学和室友：
 		<div class="control-input">
               <span class="input-icon nickname"></span>
               <input name="wxqq" type="TEXT" placeholder="微信账号或者QQ号"/>
