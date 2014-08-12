@@ -23,14 +23,35 @@ function userIsEnroll($userName)
 		return $result;
 	}
 	$u=$this->message['from'];
-	if(userIsEnroll($u)){
-		$response = array();
-		$response['FromUserName'] = $this->message['to'];
-		$response['ToUserName'] = $this->message['from'];
-		$response['CreateTime'] = $this->message['time'];
-		$response['MsgType'] = 'transfer_customer_service';
-		return $response;
-	}
+	if(userIsEnroll($u))
+		{
+		if((0<date('G') && date('G')<4)||date('G')==0){
+			$dat="学长学姐们都睡觉去啦~有什么问题明天再来问吧~学弟/学妹也早点睡哈！";
+			$response = $this->respText($dat);
+			return $response;
+		}else{
+			if(4<date('G') && date('G')<6){
+				$dat="这么早学长学姐还没起床呢！学弟/学妹也再睡一会吧~";
+				$response = $this->respText($dat);
+				return $response;
+			}
+			else{
+				if(6<date('G') && date('G')<9){
+					$dat="让学长学姐再赖会床吧，一会就好~学弟/学妹先去吃个早餐哈~";
+					$response = $this->respText($dat);
+					return $response;
+				}
+				else{
+					$response = array();
+					$response['FromUserName'] = $this->message['to'];
+					$response['ToUserName'] = $this->message['from'];
+					$response['CreateTime'] = $this->message['time'];
+					$response['MsgType'] = 'transfer_customer_service';
+					return $response;
+					}
+				}
+			}
+		}
 	else
 	{
 $bind[] = array(

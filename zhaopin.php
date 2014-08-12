@@ -16,7 +16,7 @@ $con = mysql_connect("localhost","weixin","password");
 		}
 		mysql_select_db('weixin', $con);
 $result=mysql_query("INSERT INTO zhaoxin (wxID,content) VALUES ('$from','$adr')");
-$dat="您的信息已经提交，请耐心等待回复。";
+$dat="组织已经收到你的信息啦！我们会以最快的速度联系你的！";
 	$response = $this->respText($dat);
 
 return $response;
