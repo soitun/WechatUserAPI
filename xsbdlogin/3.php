@@ -39,14 +39,12 @@ $result1=json_decode($info1,true);
 
 <meta charset="UTF-8" />
 <meta name=”viewport” content=”width=device-width, initial-scale=1, maximum-scale=1″>
-<meta name="viewport" content="width=100" />
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
-<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+
 </head>
 
 <body>
-<img src="<?php print_r($result1['headimgurl']) ?>" height="220" width="220"><br/>
+<?php if($result1['headimgurl']){
+echo "<img src='".$result1['headimgurl']."' height='220' width='220'><br/>";} ?>
 姓名：<?php print_r($result1['nickname']) ?></br>
 性别：<?php if($result1['sex']==1){echo "男";}else{echo "女";} ?></br>
 城市：<?php print_r($result1['city']) ?></br>

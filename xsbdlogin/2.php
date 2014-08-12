@@ -12,8 +12,12 @@ function realname($userName)
 		$row = mysql_fetch_array($result);
 		$result2 = mysql_query("SELECT * FROM stuinfo where sfzh = '".$row['idnumber']."';");
 		$row2 = mysql_fetch_array($result2);
-		if($row2['xy']=='金融与统计学院'||$row2['xy']=='经济与贸易学院'){$baodao='北校区';}else{if($row2['xy']=='工商管理学院'){$baodao='待定';}else{$baodao='南校区';}}
-		if (!$row) $content = '没有相关信息！';
+		if($row2['xy']=='金融与统计学院'||$row2['xy']=='经济与贸易学院'||$row2['zy']=='会计学'||$row2['zy']=='会计学（空军财会审计干部）'||$row2['zy']=='财务管理'||$row2['zy']=='财务管理（金融工程）')
+		{$baodao='北校区';}
+		else
+		{
+		$baodao='南校区';
+		}if (!$row) $content = '没有相关信息！';
 		
 		else 
 		{
