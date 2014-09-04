@@ -1,5 +1,5 @@
-<?
-    $con = mysql_connect("localhost","weixin","QNXGweixin@)!)");
+<?php
+    $con = mysql_connect("localhost","weixin","password");
 		mysql_set_charset("UTF8", $con);
 		if (!$con)
 		{

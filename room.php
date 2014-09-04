@@ -5,18 +5,19 @@ function realname($userName)
 	{
 		$result = mysql_query("SELECT * FROM student where wxId = '".$userName."';");
 		$row = mysql_fetch_array($result);
-		$result2 = mysql_query("SELECT bj FROM stuinfo where sfzh = '".$row['idnumber']."';");
+		$result2 = mysql_query("SELECT * FROM stuinfo where sfzh = '".$row['idnumber']."';");
 		$row2 = mysql_fetch_array($result2);
-		$result3 = mysql_query("select * from stuinfo left join student on stuinfo.xh= student.xh where bj = '".$row2['bj']."';");
-		 
-		if (!$row) $content = '没有相关信息！';
+		$result3 = mysql_query("select * from room where xh = '".$row2['xh']."';");
+		$row3 = mysql_fetch_array($result3); 
+		if (!$row3) $content1 = '目前只有电气院的数据，你的宿舍还没分好，请耐心等待！';
 		else 
-		{$content1="同班同学\n姓名/性别/QQ或微信";
-		while($row3 = mysql_fetch_array($result3))
 		{
-			$content= $row3['xm']."/".$row3['xb']."/".$row3['wxqq'];
-			$content1=$content1."\n".$content;
-			}
+		
+			$content1 = "您的寝室信息：".
+			"\n楼栋：".$row3['ld'].
+			"\n房间号：".$row3['room']
+			;
+			
 			
 		
 		}

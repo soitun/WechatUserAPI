@@ -21,7 +21,7 @@ function nobind()
 {
 $bind[] = array(
 				'title' => '点击绑定',
-				'url' =>'http://1000.hnu.cn/weixin/xsbd/bind.php?uid=' .$message['from'],
+				'url' =>'http://web/weixin/xsbd/bind.php?uid=' .$message['from'],
 				'description' => '欢迎使用湖南大学新生宝典，在您使用个人功能之前请先点击此信息进行绑定。'
 			);
 $response = $this->respNews($bind);
@@ -29,7 +29,7 @@ return $response;
 }
 function stuinfo($wxid)	
 {
-$con = mysql_connect("localhost","weixin","QNXGweixin@)!)");
+$con = mysql_connect("localhost","weixin","password");
 		mysql_set_charset("UTF8", $con);
 		if (!$con)
 		{
